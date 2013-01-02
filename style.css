@@ -1,0 +1,28 @@
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.6;
+	margin: 20px auto;
+	width: 600px;
+}
+
+a:link {
+	color: #4169E1;
+}
+
+a:visited {
+	color: #8B4513;
+}
+
+a:hover {
+	color: #FA8072;
+}
+
+ul {
+	padding: 0;
+}
+
+time {
+	color: #999;
+	font-size: 0.7em;
+	text-transform: uppercase;
+}

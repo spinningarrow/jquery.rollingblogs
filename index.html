@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Rolling Blogs</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<h1>jQuery Plugin: Rolling Blogs</h1>
+
+		<h2>Assorted Blogs</h2>
+		<ul class="blogroll">
+			<li><a href="http://hyperboleandahalf.blogspot.com/" data-feed="http://feeds.feedburner.com/Hyperbole-and-a-half">Hyperbole and a Half</a></li>
+			<li><a href="http://www.zeldman.com" data-feed="http://www.zeldman.com/feed/">Jeffrey Zeldman Presents The Daily Report</a></li>
+			<li><a href="http://sethgodin.typepad.com/" data-feed="http://feeds.feedburner.com/typepad/sethsmainblog">Seth's Blog</a></li>
+			<li><a href="http://xkcd.com/" data-feed="http://xkcd.com/atom.xml">xkcd.com</a></li>
+			<li><a href="http://zenhabits.net" data-feed="http://zenhabits.net/feed/">zenhabits</a></li>
+		</ul>
+
+		<h2>Photoblogs</h2>
+		<ul class="blogroll">
+			<li><a href="http://www.get-a-glimpse.com" data-feed="http://www.get-a-glimpse.com/blog/atom.xml">Foto</a></li>
+			<li><a href="http://www.georgemunday.com/renaissance" data-feed="http://www.georgemunday.com/renaissance/feed/">renaissance</a></li>
+			<li><a href="http://www.ganciocielo.com" data-feed="http://www.ganciocielo.com/index.php?feed=rss2">QuadriCromia</a></li>
+			<li><a href="http://yvanmarn.com/" data-feed="http://yvanmarn.com/index.php?x=rss">Lux enigmae</a></li>
+			<li><a href="http://pixtream.samolinov.com/" data-feed="http://pixtream.samolinov.com/index.php?x=rss">PIXTREAM</a></li>
+		</ul>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="jquery-1.8.3.js"></script>
+		<script src="jquery.rollingblogs.js"></script>
+		<script>
+			$(function () {
+				$('.blogroll').rollingblogs();
+			})
+		</script>
+	</body>
+</html>
