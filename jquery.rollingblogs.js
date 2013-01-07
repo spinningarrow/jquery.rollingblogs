@@ -46,20 +46,14 @@
 		// Wait for all feeds to finish loading
 		$.when.apply($, feedsDeferreds).done(function () {
 			// Sort feeds by last published date
-			var sortedFeeds = $.makeArray(arguments).sort(lastPublishedSorter)
+			var sortedFeeds = $.makeArray(arguments).sort(function (a, b) {
+				return new Date(b.lastPublished).getTime() - new Date(a.lastPublished).getTime()
+			})
+
 			deferred.resolve(sortedFeeds)
 		})
 
 		return deferred.promise()
-	}
-
-	/**
-	* Helper to sort feeds according to the last-published date
-	*
-	* @param {feed} a, b google.feeds.Feed object augmented with a 'lastPublished' property
-	*/
-	function lastPublishedSorter(a, b) {
-		return new Date(b.lastPublished).getTime() - new Date(a.lastPublished).getTime()
 	}
 
 	/**
@@ -97,8 +91,8 @@
 
 					// Format HTML results using the template specified by
 					// options
-					$(sortedFeeds).each(function (index, value) {
-						htmlResult.push(options.template(value))
+					$(sortedFeeds).each(function () {
+						htmlResult.push(options.template(this))
 					})
 
 					$element.html(htmlResult.join(''))
