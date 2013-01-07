@@ -1,4 +1,11 @@
-(function ($, google, undefined) {
+/*!
+ * jquery.rollingblogs v0.3
+ *
+ * Copyright 2013 Sahil Bajaj
+ * Released under the MIT license
+ */
+
+(function ($, google) {
 
 	// Load Google Feed API
 	google.load("feeds", "1")
