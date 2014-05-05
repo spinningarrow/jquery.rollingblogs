@@ -1,21 +1,16 @@
-/*!
- * jquery.rollingblogs v0.3
- *
- * Copyright 2013 Sahil Bajaj
- * Released under the MIT license
- */
+// jquery.rollingblogs v0.3
+//
+// Copyright 2013 Sahil Bajaj
+// Released under the MIT license
 
 (function ($, google) {
 
 	// Load Google Feed API
 	google.load("feeds", "1")
 
-	/**
-	* Fetches the feeds (each with one entry) using the Google Feed API
-	*
-	* @param {Array} feeds URLs of feeds to be loaded
-	* @return {Array} Deferreds corresponding to the fetched feeds
-	*/
+	// Fetches the feeds (each with one entry) using the Google Feed API
+	// @param {Array} feeds URLs of feeds to be loaded
+	// @return {Array} Deferreds corresponding to the fetched feeds
 	function fetchFeeds(feeds) {
 		var deferreds = []
 
@@ -40,13 +35,10 @@
 		})
 	}
 
-	/**
-	* Sorts feeds according to the last published date
-	*
-	* @param {Array} feedsDeferreds Feeds to be sorted
-	* @param {jQuery Object} $element DOM element in which to display sorted feeds
-	* @return {Promise} Array of sorted feeds
-	*/
+	// Sorts feeds according to the last published date
+	// @param {Array} feedsDeferreds Feeds to be sorted
+	// @param {jQuery Object} $element DOM element in which to display sorted feeds
+	// @return {Promise} Array of sorted feeds
 	function sortFeeds(feedsDeferreds) {
 		var deferred = $.Deferred()
 
@@ -63,11 +55,8 @@
 		return deferred.promise()
 	}
 
-	/**
-	* jQuery plugin hook
-	*
-	* @param {Object} options Options passed to the plugin (e.g. template)
-	*/
+	// jQuery plugin hook
+	// @param {Object} options Options passed to the plugin (e.g. template)
 	$.fn.rollingblogs = function (options) {
 		return this.each(function () {
 			var $element = $(this)
